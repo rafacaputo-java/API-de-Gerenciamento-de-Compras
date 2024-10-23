@@ -1,4 +1,4 @@
-package com.caputo.API.de.Gerenciamento.de.Compras.exceptions;
+package com.caputo.API.de.Gerenciamento.de.Compras.infra.exceptions;
 
 public class InvalidEntityException extends RuntimeException {
 

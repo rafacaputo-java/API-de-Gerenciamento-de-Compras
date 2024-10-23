@@ -1,6 +1,7 @@
 package com.caputo.API.de.Gerenciamento.de.Compras.services.impl;
 
-import com.caputo.API.de.Gerenciamento.de.Compras.exceptions.InvalidEntityException;
+import com.caputo.API.de.Gerenciamento.de.Compras.infra.exceptions.InvalidEntityException;
+import com.caputo.API.de.Gerenciamento.de.Compras.infra.utils.CpfUtils;
 import com.caputo.API.de.Gerenciamento.de.Compras.mappers.CompraMapper;
 import com.caputo.API.de.Gerenciamento.de.Compras.model.dto.request.CompraRequest;
 import com.caputo.API.de.Gerenciamento.de.Compras.model.dto.response.RelatorioComprasDTO;
@@ -28,6 +29,7 @@ public class CompraServiceImpl implements CompraService {
   private final CompraMapper compraMapper;
 
   public CompraResponse registrarCompra(CompraRequest compraRequest) {
+    compraRequest.setCpfComprador(CpfUtils.maskCpf(compraRequest.getCpfComprador()));
 
     List<Compra> comprasExistentes = compraRepository.findByCpfCompradorAndNomeProduto(compraRequest.getCpfComprador(), compraRequest.getNomeProduto());
     var totalComprado = comprasExistentes.stream().mapToLong(Compra::getQuantidade).sum();

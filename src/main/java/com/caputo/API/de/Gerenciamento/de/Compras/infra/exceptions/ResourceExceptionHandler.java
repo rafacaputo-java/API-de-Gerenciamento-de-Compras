@@ -1,4 +1,4 @@
-package com.caputo.API.de.Gerenciamento.de.Compras.exceptions;
+package com.caputo.API.de.Gerenciamento.de.Compras.infra.exceptions;
 
 import jakarta.servlet.http.HttpServletRequest;
 import java.time.Instant;

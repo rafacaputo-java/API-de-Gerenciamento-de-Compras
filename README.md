@@ -11,7 +11,7 @@
 
 1. Clonar o repositório
 ``` 
-git clone https://github.com/rafaelcaputodev/ToolsChallenge.git
+git clone https://github.com/rafacaputo-java/API-de-Gerenciamento-de-Compras.git
 ```
 
 2. Este projeto utiliza o banco de dados H2 em modo memória (in-memory) para facilitar o desenvolvimento e os testes. Abaixo estão as configurações necessárias para rodar o H2:
