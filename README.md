@@ -1,4 +1,4 @@
-# PROJETO Tools Java Challenge
+# PROJETO Gerenciamento de compras
 
 
 ## Requisitos
