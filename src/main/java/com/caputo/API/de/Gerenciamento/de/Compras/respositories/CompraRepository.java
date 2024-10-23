@@ -18,11 +18,11 @@ public interface CompraRepository extends JpaRepository<Compra, Long> {
       "(:cpfComprador IS NULL OR c.cpfComprador LIKE %:cpfComprador%) AND " +
       "(:nomeProduto IS NULL OR LOWER(c.nomeProduto) LIKE LOWER(CONCAT('%', :nomeProduto, '%'))) AND " +
       "(:dataInicio IS NULL OR c.dataHoraCompra >= :dataInicio) AND " +
-      "(:dataFim IS NULL OR c.dataHoraCompra < :dataFim)") // Use dataFim
+      "(:dataFim IS NULL OR c.dataHoraCompra < :dataFim)") 
   List<Compra> filtrarCompras(@Param("cpfComprador") String cpfComprador,
       @Param("nomeProduto") String nomeProduto,
       @Param("dataInicio") LocalDateTime dataInicio,
-      @Param("dataFim") LocalDateTime dataFim); // Adicione dataFim
+      @Param("dataFim") LocalDateTime dataFim); 
 
 
   List<Compra> findByDataHoraCompraBetween(LocalDateTime dataInicio, LocalDateTime dataFim);
